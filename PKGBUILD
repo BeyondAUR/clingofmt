@@ -19,23 +19,22 @@ backup=()
 options=()
 install=
 changelog=
-source=("$pkgname-$pkgver.tar.gz"
-        "$pkgname-$pkgver.patch")
+source=("$pkgname-$pkgver.tar.gz::https://github.com/potassco/${pkgname}/releases/tag/v${pkgver}")
 noextract=()
 sha256sums=()
 validpgpkeys=()
 
 build() {
-	cd "$pkgname-$pkgver"
-	export RUSTUP_TOOLCHAIN=stable
+  cd "$pkgname-$pkgver"
+  export RUSTUP_TOOLCHAIN=stable
   export CARGO_TARGET_DIR=target
-  cargo build --frozen --release --all-features
+  cargo build --locked --release --all-features
 }
 
 check() {
   cd $pkgname-$pkgver
   export RUSTUP_TOOLCHAIN=stable
-  cargo test --frozen --all-features
+  cargo test --locked --all-features
 }
 
 package() {
