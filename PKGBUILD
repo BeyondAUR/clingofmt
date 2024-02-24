@@ -19,9 +19,9 @@ backup=()
 options=()
 install=
 changelog=
-source=("$pkgname-$pkgver.tar.gz::https://github.com/potassco/${pkgname}/releases/tag/v${pkgver}")
+source=("$pkgname-$pkgver.tar.gz::https://github.com/potassco/${pkgname}/archive/refs/tags/v${pkgver}.tar.gz")
 noextract=()
-sha256sums=()
+sha256sums=('bce1282a13fe51cc7fec3237ae582144ceb8904df4503071d239784fb92a2af1')
 validpgpkeys=()
 
 build() {
@@ -40,5 +40,5 @@ check() {
 package() {
   cd $pkgname-$pkgver
   install -Dm0755 -t "$pkgdir/usr/bin/" "target/release/$pkgname"
-  install -Dm644 LICENCE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE-MIT"
+  install -Dm644 ./LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
 }
