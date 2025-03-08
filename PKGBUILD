@@ -1,6 +1,6 @@
 # Maintainer: Evan Greenup <SKIP>
 pkgname="clingofmt"
-pkgver="0.1.0"
+pkgver="0.1.1"
 pkgrel=1
 epoch=
 pkgdesc="Tool to find and fix formatting issues in clingo files"
@@ -21,7 +21,7 @@ install=
 changelog=
 source=("$pkgname-$pkgver.tar.gz::https://github.com/potassco/${pkgname}/archive/refs/tags/v${pkgver}.tar.gz")
 noextract=()
-sha256sums=('bce1282a13fe51cc7fec3237ae582144ceb8904df4503071d239784fb92a2af1')
+sha256sums=('de70a1f3e2d82c8aa14ec3c6b6e0b27383f4d4832a2316db7f8621b8505edb57')
 validpgpkeys=()
 
 build() {
