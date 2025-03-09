@@ -28,13 +28,13 @@ build() {
   cd "$pkgname-$pkgver"
   export RUSTUP_TOOLCHAIN=stable
   export CARGO_TARGET_DIR=target
-  cargo build --locked --release --all-features
+  cargo build --release --all-features
 }
 
 check() {
   cd $pkgname-$pkgver
   export RUSTUP_TOOLCHAIN=stable
-  cargo test --locked --all-features
+  cargo test --all-features
 }
 
 package() {
