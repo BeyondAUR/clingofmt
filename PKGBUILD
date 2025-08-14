@@ -1,7 +1,7 @@
 # Maintainer: Evan Greenup <SKIP>
 pkgname="clingofmt"
 pkgver="0.1.1"
-pkgrel=1
+pkgrel=2
 epoch=
 pkgdesc="Tool to find and fix formatting issues in clingo files"
 arch=(x86_64)
@@ -34,7 +34,7 @@ build() {
 check() {
   cd $pkgname-$pkgver
   export RUSTUP_TOOLCHAIN=stable
-  cargo test --all-features
+  cargo test --release --all-features
 }
 
 package() {
